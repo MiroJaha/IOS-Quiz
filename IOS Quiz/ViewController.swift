@@ -93,16 +93,16 @@ class ViewController: UIViewController {
     }
     
     func createStarLayers() {
-        let u = SKScene()
+        let scene = SKScene()
         
         //A layer of a star field
         let starfieldNode = SKNode()
         starfieldNode.name = "starfieldNode"
         starfieldNode.addChild(starfieldEmitterNode(text: "✦", speed: -48, lifetime: self.view.frame.height / 23, scale: 0.2, birthRate: 1, color: SKColor.lightGray))
-        u.addChild(starfieldNode)
-        u.size = CGSize(width: view.frame.width, height:  view.frame.height)
+        scene.addChild(starfieldNode)
+        scene.size = CGSize(width: view.frame.width, height:  view.frame.height)
         
-        starsView.presentScene(u)
+        starsView.presentScene(scene)
         starsView.frame = .init(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         view.addSubview(starsView)
         view.sendSubviewToBack(starsView)
@@ -120,16 +120,16 @@ class ViewController: UIViewController {
     
     func createRainLayers() {
         print("Double Clicked")
-        let u = SKScene()
+        let scene = SKScene()
         
         //A layer of a star field
         let starfieldNode = SKNode()
         starfieldNode.name = "starfieldNode"
         starfieldNode.addChild(starfieldEmitterNode(text: "|", speed: -148, lifetime: self.view.frame.height / 23, scale: 0.2, birthRate: 4, color: SKColor.lightGray))
-        u.addChild(starfieldNode)
-        u.size = CGSize(width: view.frame.width, height:  view.frame.height)
+        scene.addChild(starfieldNode)
+        scene.size = CGSize(width: view.frame.width, height:  view.frame.height)
         
-        rainView.presentScene(u)
+        rainView.presentScene(scene)
         rainView.frame = .init(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         view.addSubview(rainView)
         view.sendSubviewToBack(rainView)
